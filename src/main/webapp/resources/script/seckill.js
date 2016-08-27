@@ -18,8 +18,7 @@ var seckill = {
             //手机验证和登录，计时交互
             //规划交互流程
             //在cookie中查找手机号
-            //var killPhone = $.cookie('killPhone');
-            var killPhone = $.cookie("userPhone");
+            var killPhone = $.cookie('killPhone');
             var startTime = params['startTime'];
             var endTime = params['endTime'];
             var seckillId = params['seckillId'];
@@ -35,7 +34,8 @@ var seckill = {
                     keyboard: false//关闭键盘事件
                 });
                 $('#killPhoneBtn').click(function () {
-                    var inputPhone = $('#killphoneKey').val();
+                    var inputPhone = $('#killPhoneKey').val();
+                    console.log('inputPhone='+inputPhone);//TODO
                     if (seckill.validatePhone(inputPhone)) {
                         //电话写入cookie
                         $.cookie('killPhone', inputPhone, {expires: 7, path: '/seckill'});
